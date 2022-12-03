@@ -1,0 +1,25 @@
+<h3>
+    <a href="/employee" class="btn btn-danger">
+        <i class="fa fa-plus"> </i> manager
+    </a>
+    Login History
+</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>UserName</th>
+            <th>Password</th>
+            <th>Date</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.loginUser}}</td>
+            <td>******</td>
+            <td>{{this.loginDate}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

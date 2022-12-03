@@ -1,0 +1,45 @@
+<h2> Employee List</h2>
+<h4>
+    <a href="/employee" class="btn btn-primary">
+        <i class="fa fa-plus"> </i> Create New
+    </a> 
+    <a href="/product/list" class="btn btn-info"> List Product</a>
+    <a href="/order/list" class="btn btn-success"> List Order</a>
+    <a href="/table/list" class="btn btn-warning"> List Table</a>
+    <a href="/login/list" class="btn btn-danger"> Login History</a>
+    <a href="/login" class="btn btn-secondary"> Logout</a>
+</h4>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Phone</th>
+            <th>Birth</th>
+            <th>Position</th>
+            <th>UserName</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.fullName}}</td>
+            <td>{{this.phone}}</td>
+            <td>{{this.birth}}</td>
+            <td>{{this.position}}</td>
+            <td>{{this.userName}}</td>
+            <td>
+                <a href="/employee/{{this._id}}">
+                    <i class="fa fa-pencil fa-lg" aria-hidden="true"></i>
+                </a>
+                <a href="/employee/delete/{{this._id}}"
+                    onclick="return confirm('Are you sure to delete this record?');">
+                    <i class="fa fa-trash fa-lg" aria-hidden="true">
+
+                    </i>
+                </a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
